@@ -1,0 +1,67 @@
+{
+	// 42 VS Code config — snippets Python (indentation = 4 espaces)
+	// Conformes à flake8 : 2 lignes vides avant le bloc __main__.
+
+	"42 main": {
+		"prefix": "main",
+		"body": [
+			"def main() -> None:",
+			"\t${0:pass}",
+			"",
+			"",
+			"if __name__ == \"__main__\":",
+			"\tmain()",
+			""
+		],
+		"description": "Fonction main + if __name__ == \"__main__\""
+	},
+	"42 if __name__": {
+		"prefix": "ifmain",
+		"body": [
+			"if __name__ == \"__main__\":",
+			"\t${0:main()}"
+		],
+		"description": "Bloc if __name__ == \"__main__\""
+	},
+	"42 fonction typée": {
+		"prefix": "def",
+		"body": [
+			"def ${1:name}(${2:arg}: ${3:int}) -> ${4:None}:",
+			"\t\"\"\"${5:Description.}\"\"\"",
+			"\t${0:pass}"
+		],
+		"description": "Fonction avec annotations de type et docstring"
+	},
+	"42 classe": {
+		"prefix": "class",
+		"body": [
+			"class ${1:Name}:",
+			"\t\"\"\"${2:Description.}\"\"\"",
+			"",
+			"\tdef __init__(self${3:, value: int}) -> None:",
+			"\t\t${4:self.value = value}",
+			"",
+			"\tdef __str__(self) -> str:",
+			"\t\treturn f\"${1:Name}(${0})\""
+		],
+		"description": "Classe avec __init__ et __str__ typés"
+	},
+	"42 try / except": {
+		"prefix": "try",
+		"body": [
+			"try:",
+			"\t${1:pass}",
+			"except ${2:Exception} as e:",
+			"\tprint(f\"Error: {e}\")$0"
+		],
+		"description": "try / except avec message"
+	},
+	"42 shebang": {
+		"prefix": "shebang",
+		"body": [
+			"#!/usr/bin/env python3",
+			"$0"
+		],
+		"description": "#!/usr/bin/env python3"
+	}
+}

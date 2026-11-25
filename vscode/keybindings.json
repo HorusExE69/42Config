@@ -1,0 +1,79 @@
+[
+	// ===================================================================
+	//  42 VS Code config — raccourcis / shortcuts
+	//  Ctrl+Alt+H : header 42 (extension 42 Header)
+	//  Ctrl+Alt+N : norme du fichier courant (norminette ou flake8)
+	//  Ctrl+Alt+M : compiler + lancer (C) / lancer (Python)
+	//  Ctrl+Alt+G : prépare "gpush " dans le terminal (git add/commit/push)
+	// ===================================================================
+	{
+		"key": "ctrl+alt+n",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.files.save",
+				{
+					"command": "workbench.action.terminal.sendSequence",
+					"args": { "text": "norminette -R CheckForbiddenSourceHeader '${file}'\n" }
+				}
+			]
+		},
+		"when": "editorTextFocus && editorLangId == c"
+	},
+	{
+		"key": "ctrl+alt+n",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.files.save",
+				{
+					"command": "workbench.action.terminal.sendSequence",
+					"args": { "text": "flake8 '${file}' && echo 'flake8: OK'\n" }
+				}
+			]
+		},
+		"when": "editorTextFocus && editorLangId == python"
+	},
+	{
+		"key": "ctrl+alt+m",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.files.saveAll",
+				{
+					"command": "workbench.action.terminal.sendSequence",
+					"args": { "text": "(cd '${fileDirname}' && cc -Wall -Wextra -Werror -g3 *.c -o a.out && ./a.out)\n" }
+				}
+			]
+		},
+		"when": "editorTextFocus && editorLangId == c"
+	},
+	{
+		"key": "ctrl+alt+m",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.files.save",
+				{
+					"command": "workbench.action.terminal.sendSequence",
+					"args": { "text": "python3 '${file}'\n" }
+				}
+			]
+		},
+		"when": "editorTextFocus && editorLangId == python"
+	},
+	{
+		"key": "ctrl+alt+g",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.files.saveAll",
+				"workbench.action.terminal.focus",
+				{
+					"command": "workbench.action.terminal.sendSequence",
+					"args": { "text": "gpush " }
+				}
+			]
+		}
+	}
+]

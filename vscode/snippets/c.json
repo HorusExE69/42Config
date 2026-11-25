@@ -1,0 +1,126 @@
+{
+	// 42 VS Code config — snippets C (indentation = tabulations)
+	// Tapez le préfixe puis Tab / type the prefix then Tab.
+	// Rappel norme : pas de "for", déclarations en début de fonction,
+	// 25 lignes max par fonction, 5 fonctions max par fichier.
+
+	"42 main (argc, argv)": {
+		"prefix": "main",
+		"body": [
+			"int\tmain(int argc, char **argv)",
+			"{",
+			"\t$0",
+			"\treturn (0);",
+			"}"
+		],
+		"description": "main avec argc / argv"
+	},
+	"42 main (void)": {
+		"prefix": "mainv",
+		"body": [
+			"int\tmain(void)",
+			"{",
+			"\t$0",
+			"\treturn (0);",
+			"}"
+		],
+		"description": "main sans argument"
+	},
+	"42 main de test (stdio)": {
+		"prefix": "maint",
+		"body": [
+			"#include <stdio.h>",
+			"",
+			"int\tmain(void)",
+			"{",
+			"\t${1:// tests}",
+			"\tprintf(\"%d\\n\", ${2:0});",
+			"\treturn (0);",
+			"}"
+		],
+		"description": "main de test avec printf (à ne pas rendre !)"
+	},
+	"42 fonction": {
+		"prefix": "func",
+		"body": [
+			"${1:void}\t${2:ft_name}(${3:void})",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "Squelette de fonction (type<TAB>nom)"
+	},
+	"42 while": {
+		"prefix": "wh",
+		"body": [
+			"${1:i} = ${2:0};",
+			"while (${1:i} < ${3:n})",
+			"{",
+			"\t$0",
+			"\t${1:i}++;",
+			"}"
+		],
+		"description": "Boucle while avec compteur (le for est interdit)"
+	},
+	"42 if / else": {
+		"prefix": "ifel",
+		"body": [
+			"if (${1:condition})",
+			"{",
+			"\t$2",
+			"}",
+			"else",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "if / else au format de la norme"
+	},
+	"42 header guard": {
+		"prefix": "hguard",
+		"body": [
+			"#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+			"# define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+			"",
+			"$0",
+			"",
+			"#endif"
+		],
+		"description": "Protection contre la double inclusion (.h)"
+	},
+	"42 includes": {
+		"prefix": "inc",
+		"body": [
+			"#include <unistd.h>",
+			"#include <stdlib.h>",
+			"$0"
+		],
+		"description": "unistd.h + stdlib.h"
+	},
+	"42 typedef struct": {
+		"prefix": "struct",
+		"body": [
+			"typedef struct s_${1:name}",
+			"{",
+			"\t${2:int}\t${3:value};$0",
+			"}\tt_${1:name};"
+		],
+		"description": "Structure nommée s_xxx / t_xxx (norme)"
+	},
+	"42 malloc protégé": {
+		"prefix": "malloc",
+		"body": [
+			"${1:ptr} = malloc(sizeof(${2:char}) * ${3:size});",
+			"if (!${1:ptr})",
+			"\treturn (${4:NULL});"
+		],
+		"description": "malloc + vérification du retour"
+	},
+	"42 write": {
+		"prefix": "wr",
+		"body": [
+			"write(${1:1}, ${2:str}, ${3:len});"
+		],
+		"description": "write(fd, buf, len)"
+	}
+}

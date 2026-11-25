@@ -1,0 +1,24 @@
+# Extensions installées par install.sh (une par ligne, # = commentaire)
+# Extensions installed by install.sh (one per line, # = comment)
+
+# ---- 42 : commun / common ----
+kube.42header                                  # 42 header (Ctrl+Alt+H)
+usernamehw.errorlens                           # erreurs affichées dans la ligne / inline errors
+
+# ---- C ----
+ms-vscode.cpptools                             # IntelliSense + débogueur gdb/lldb
+MariusvanWijk-JoppeKoers.codam-norminette-3    # erreurs de norminette surlignées / norminette highlighter
+DoKca.42-ft-count-line                         # nombre de lignes par fonction (max 25)
+keyhr.42-c-format                              # formateur conforme à la norme (c_formatter_42)
+
+# ---- Python ----
+ms-python.python                               # Python + Pylance
+ms-python.flake8                               # norme Python (flake8)
+ms-python.autopep8                             # formateur compatible flake8
+ms-python.mypy-type-checker                    # vérification des types (annotations)
+
+# ---- Apparence / look ----
+p47hf1nd3r.axiom-theme                         # thème Axiom (monochrome, sombre et clair)
+
+# ---- Confort / comfort ----
+mhutchie.git-graph                             # historique git visuel

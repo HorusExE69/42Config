@@ -1,0 +1,64 @@
+{
+	// ===================================================================
+	//  42 VS Code config — paramètres / settings
+	//  C  : tabulations (norminette)      Python : 4 espaces (flake8)
+	//  VS Code applique automatiquement le bloc "[c]" ou "[python]"
+	//  selon le fichier ouvert : rien à changer à la main.
+	// ===================================================================
+
+	// ---- Apparence : thème Axiom + curseur fluide ----
+	"workbench.colorTheme": "Axiom Dark",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.cursorBlinking": "smooth",
+
+	// ---- Commun / common ----
+	"editor.detectIndentation": false,
+	"editor.tabSize": 4,
+	"editor.renderWhitespace": "all",
+	"editor.renderControlCharacters": true,
+	"editor.formatOnSave": false,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.eol": "\n",
+	"files.associations": {
+		"*.h": "c"
+	},
+
+	// ---- C : tabulations, 80 colonnes, formateur 42 ----
+	"[c]": {
+		"editor.insertSpaces": false,
+		"editor.tabSize": 4,
+		"editor.detectIndentation": false,
+		"editor.rulers": [80],
+		"editor.defaultFormatter": "keyhr.42-c-format",
+		"editor.formatOnSave": false
+	},
+	"[cpp]": {
+		"editor.insertSpaces": false,
+		"editor.tabSize": 4,
+		"editor.detectIndentation": false
+	},
+	"[makefile]": {
+		"editor.insertSpaces": false,
+		"editor.detectIndentation": false
+	},
+	"C_Cpp.formatting": "disabled",
+	"codam-norminette-3.command": "norminette",
+	"codam-norminette-3.displayErrorName": true,
+
+	// ---- Python : 4 espaces, 79 colonnes, flake8 + autopep8 ----
+	"[python]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4,
+		"editor.detectIndentation": false,
+		"editor.rulers": [79],
+		"editor.defaultFormatter": "ms-python.autopep8",
+		"editor.formatOnSave": true
+	},
+	"python.analysis.typeCheckingMode": "basic",
+
+	// ---- 42 header (remplis par install.sh / filled by install.sh) ----
+	"42header.username": "__LOGIN__",
+	"42header.email": "__EMAIL__"
+}
